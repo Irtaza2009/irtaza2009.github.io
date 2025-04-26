@@ -8,7 +8,10 @@ window.ontouchmove = (e) => handleOnMove(e.touches[0]);
 const track = document.getElementById("image-track");
 const articleTrack = document.getElementById("article-track");
 
-const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
+const handleOnDown = (e) => {
+  if (!track) return; // Add null check
+  track.dataset.mouseDownAt = e.clientX;
+};
 
 const handleOnUp = () => {
   track.dataset.mouseDownAt = "0";
@@ -16,7 +19,7 @@ const handleOnUp = () => {
 };
 
 const handleOnMove = (e) => {
-  if (track.dataset.mouseDownAt === "0") return;
+  if (!track || track.dataset.mouseDownAt === "0") return; // Add null check
 
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
     maxDelta = window.innerWidth / 2;
@@ -207,7 +210,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleLabel = document.querySelector(".toggle-label");
 
   function checkOverlap() {
-    const menuButtons = document.querySelector(".menu-buttons"); // Adjust selector based on your menu button container
+    const menuButtons = document.querySelector(".menu-buttons"); // Ensure this selector matches your HTML
+    const toggleLabel = document.querySelector(".toggle-label");
+
+    if (!menuButtons || !toggleLabel) return; // Add null checks
+
     const toggleRect = toggleLabel.getBoundingClientRect();
     const menuRect = menuButtons.getBoundingClientRect();
 
