@@ -1,5 +1,3 @@
-
-
 # Termainal Portfolio
 function projects_menu() {
     echo -e "\e[1;35mChoose a project:\e[0m"

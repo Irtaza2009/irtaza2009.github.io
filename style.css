@@ -2,8 +2,16 @@
   cursor: none;
 }
 
+@font-face {
+  font-family: "0xProto";
+  src: url("/fonts/0xProtoNerdFont-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: "Roboto Mono", monospace;
+  font-family: "0xProto";
+  src: url("/fonts/0xProtoNerdFont-Regular.ttf") format("truetype");
   margin: 0;
   padding: 0;
   background: var(--bg-color);
@@ -18,6 +26,10 @@ html {
 
 header {
   padding: 8vh 5vw;
+}
+
+b {
+  color: #e5cab7;
 }
 
 #header-wrapper {
