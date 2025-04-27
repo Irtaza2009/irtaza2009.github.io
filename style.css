@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "0xProto";
+  font-family: "0xProto", monospace;
   src: url("/fonts/0xProtoNerdFont-Regular.ttf") format("truetype");
   margin: 0;
   padding: 0;
