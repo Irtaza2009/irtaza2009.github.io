@@ -392,14 +392,14 @@ section {
 
 /* Light Mode */
 .light {
-  --bg-color: linear-gradient(180deg, #b0f7d9, #ffabab);
+  --bg-color: #e8e5f0;
   --text-color: #282c34;
   --link-color: #947b82;
-  --bold-color: #120f19;
-  --card-bg-color: linear-gradient(180deg, #b0f7d9, #ffabab);
-  --card-hover-bg-color: #c5ffba;
+  --bold-color: #947b82;
+  --card-bg-color: #ded9e3;
+  --card-hover-bg-color: #cad5db;
   --overlay-bg-color: rgba(255, 171, 171, 0.5);
-  --scroll-indicator-bg-color: #ffabab;
+  --scroll-indicator-bg-color: #dcb8b0;
 }
 
 .toggle-switch {
@@ -411,7 +411,7 @@ section {
   height: 40px;
   position: relative;
   display: block;
-  background: #c5ffba;
+  background: #e5cab7;
   border-radius: 40px;
   box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.4),
     inset 0px -3px 8px rgba(255, 255, 255, 0.4);
