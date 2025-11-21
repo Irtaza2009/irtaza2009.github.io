@@ -2,7 +2,9 @@
 
 **_My personal portfolio!_**
 
-Live at: https://www.irtaza.xyz/portfolio/
+Live at: https://www.irtaza.xyz/
+
+Submitted to a [Hack Club](https://hackclub.com/) program too!
 
 ## Technologies Used
 
