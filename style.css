@@ -371,12 +371,7 @@ section {
   }
 }
 
-.toggle {
-  position: absolute;
-  top: 3vh;
-  left: 1.5vw;
-  z-index: 2000;
-}
+
 
 /* Dark Mode */
 .dark {
@@ -402,145 +397,64 @@ section {
   --scroll-indicator-bg-color: #dcb8b0;
 }
 
-.toggle-switch {
-  display: none;
-}
-
-.toggle-label {
-  width: 100px;
-  height: 40px;
-  position: relative;
-  display: block;
-  background: #e5cab7;
-  border-radius: 40px;
-  box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.4),
-    inset 0px -3px 8px rgba(255, 255, 255, 0.4);
+/* Dark Mode Toggle */
+.darkmode-toggle {
+  position: absolute;
+  top: 3vh;
+  left: 1.5vw;
+  z-index: 2000;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.toggle-label:after {
-  content: "";
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  top: 2.5px;
-  left: 2.5px;
-  background: linear-gradient(180deg, #ffabab, #6db5ff);
-  border-radius: 35px;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-}
-
-.toggle-label svg {
-  position: absolute;
-  width: 25px;
-  top: 7.5px;
-  z-index: 100;
-}
-
-.sun {
-  left: 7.5px;
-  fill: #fff;
-  transition: 0.3s;
-}
-
-.moon {
-  left: 67.5px;
-  fill: #7e7e7e;
-  transition: 0.3s;
-}
-
-.toggle-switch:checked + .toggle-label {
-  background: #242424;
-}
-
-.toggle-switch:checked + .toggle-label:after {
-  left: 97.5px;
-  transform: translateX(-100%);
-  background: linear-gradient(180deg, #777, #3a3a3a);
-}
-
-.toggle-switch:checked + .toggle-label .sun {
-  fill: #7e7e7e;
-}
-
-.toggle-switch:checked + .toggle-label .moon {
-  fill: #fff;
-}
-
-.background {
-  width: 100vw;
-  height: 100vh;
-  background: #fff;
-  z-index: -1;
-  position: absolute;
-  transition: 0.3s;
-}
-
-.toggle-switch:checked ~ .background {
-  background: #242424;
-}
-
-/* Small Size Styles */
-.toggle.small .toggle-label {
-  width: 75px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  width: 30px;
   height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.toggle.small .toggle-label:after {
-  width: 25px;
-  height: 25px;
-  top: 2.5px;
-  left: 2.5px;
+.darkmode-toggle:hover {
+  color: var(--link-color);
 }
 
-.toggle.small .sun {
-  width: 20px;
-  top: 5px;
-  left: 5px;
+.darkmode-toggle .light-icon,
+.darkmode-toggle .dark-icon {
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  position: absolute;
 }
 
-.toggle.small .moon {
-  left: 50px;
-  top: 5px;
+/* Light mode - show sun, hide moon */
+body.light .darkmode-toggle .light-icon {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.toggle-switch:checked + .toggle-label.small:after {
-  left: 70px;
+body.light .darkmode-toggle .dark-icon {
+  opacity: 0;
+  transform: scale(0);
 }
 
-/* Media Query to Adjust Size on Smaller Screens */
+/* Dark mode - show moon, hide sun */
+body.dark .darkmode-toggle .light-icon {
+  opacity: 0;
+  transform: scale(0);
+}
+
+body.dark .darkmode-toggle .dark-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Media Query for Smaller Screens */
 @media (max-width: 600px) {
-  .toggle {
+  .darkmode-toggle {
     top: 1vh;
     left: 1vw;
   }
-
-  .toggle .toggle-label {
-    width: 75px;
-    height: 30px;
-  }
-
-  .toggle .toggle-label:after {
-    width: 25px;
-    height: 25px;
-    top: 2.5px;
-    left: 2.5px;
-  }
-
-  .toggle .sun {
-    width: 20px;
-    top: 5px;
-    left: 5px;
-  }
-
-  .toggle .moon {
-    left: 50px;
-    top: 5px;
-  }
-
-  .toggle-switch:checked + .toggle-label:after {
-    left: 70px;
+  
+  .darkmode-toggle .light-icon,
+  .darkmode-toggle .dark-icon {
+    font-size: 1.5rem;
   }
 }

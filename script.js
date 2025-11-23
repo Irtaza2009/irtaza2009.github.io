@@ -5,22 +5,29 @@ document.addEventListener("DOMContentLoaded", () => {
     mirror: true,
   });
 
-  // Dark mode toggle setup
-  const toggleSwitch = document.querySelector(".toggle-switch");
-  if (toggleSwitch) {
-    document.body.classList.add("dark");
-    toggleSwitch.checked = true;
+// Dark mode toggle setup
+const darkModeToggle = document.getElementById('darkmode-toggle');
 
-    toggleSwitch.addEventListener("change", () => {
-      if (toggleSwitch.checked) {
-        document.body.classList.remove("light");
-        document.body.classList.add("dark");
-      } else {
-        document.body.classList.remove("dark");
-        document.body.classList.add("light");
-      }
-    });
+// Set initial mode
+if (!localStorage.getItem('theme')) {
+  localStorage.setItem('theme', 'dark');
+}
+
+const currentTheme = localStorage.getItem('theme');
+document.body.classList.add(currentTheme);
+
+// Toggle dark/light mode
+darkModeToggle.addEventListener('click', () => {
+  if (document.body.classList.contains('dark')) {
+    document.body.classList.remove('dark');
+    document.body.classList.add('light');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.body.classList.remove('light');
+    document.body.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
   }
+});
 
   // Handle section highlighting on scroll
   const sections = document.querySelectorAll("section");
