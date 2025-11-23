@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize AOS
-  AOS.init({
-    duration: 1500,
-    mirror: true,
-  });
 
 // Dark mode toggle setup
 const darkModeToggle = document.getElementById('darkmode-toggle');
