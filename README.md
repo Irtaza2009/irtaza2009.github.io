@@ -12,16 +12,16 @@ Submitted to a [Hack Club](https://hackclub.com/) program too!
 - JS
 - CSS
 - ParticlesJS
-- AOS.JS
+- ~~AOS.JS~~
 
 ## Dark Theme
 
-![Dark Theme Title](https://www.irtaza.xyz/portfolio/assets/Title.png)
+![Dark Theme](https://www.irtaza.xyz/assets/Title.png)
 
 ## Light Theme
 
-![Light Theme Title](https://www.irtaza.xyz/portfolio/assets/TitleLight.png)
+![Light Theme](https://www.irtaza.xyz/assets/TitleLight.png)
 
 ## About
 
-![Dark Theme About](https://www.irtaza.xyz/portfolio/assets/About.png)
+![Dark Theme About](https://www.irtaza.xyz/assets/About.png)
