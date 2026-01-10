@@ -215,6 +215,17 @@ h2::after {
   color: var(--text-color);
 }
 
+.card-content a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--link-color);
+  transition: color 0.3s;
+}
+
+.card-content a:hover {
+  color: #6db5ff;
+}
+
 .card-footer {
   display: flex;
   justify-content: space-between;
