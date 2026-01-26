@@ -260,6 +260,10 @@ h2::after {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+  width: 70vw;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
 }
 
 .menu ul {
