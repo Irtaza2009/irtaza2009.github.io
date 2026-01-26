@@ -226,6 +226,26 @@ h2::after {
   color: #6db5ff;
 }
 
+.card-tech {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5vh 0 1vh;
+  color: var(--link-color);
+}
+
+.card-tech i {
+  font-size: 1.2rem;
+  color: var(--link-color);
+  transition: color 0.2s ease;
+}
+
+.card-tech span:hover i {
+  color: #6db5ff;
+}
+
 .card-footer {
   display: flex;
   justify-content: space-between;
