@@ -20,6 +20,11 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background: var(--link-color);
+  color: var(--bg-color);
+}
+
 footer {
   background: var(--bg-color);
   color: var(--text-color);
@@ -62,14 +67,14 @@ b {
 }
 
 .profile-pic {
-  width: 12vw;
-  height: 12vw;
+  width: 16vw;
+  height: 16vw;
   border-radius: 50%;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 
 header h1 {
-  margin: 0;
+  margin: 1vh 0 2vh 0;
   font-size: 4.5vw;
 }
 
@@ -83,6 +88,7 @@ header h1 {
   display: flex;
   justify-content: center;
   gap: 1vw;
+  margin-bottom: 2vh;
 }
 
 .social-links a {
