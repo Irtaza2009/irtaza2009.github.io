@@ -1,5 +1,24 @@
 * {
   cursor: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--link-color) var(--bg-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--link-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bold-color);
 }
 
 @font-face {
