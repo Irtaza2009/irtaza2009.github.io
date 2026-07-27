@@ -1,28 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Dark mode toggle setup
+  const darkModeToggle = document.getElementById("darkmode-toggle");
 
-// Dark mode toggle setup
-const darkModeToggle = document.getElementById('darkmode-toggle');
-
-// Set initial mode
-if (!localStorage.getItem('theme')) {
-  localStorage.setItem('theme', 'dark');
-}
-
-const currentTheme = localStorage.getItem('theme');
-document.body.classList.add(currentTheme);
-
-// Toggle dark/light mode
-darkModeToggle.addEventListener('click', () => {
-  if (document.body.classList.contains('dark')) {
-    document.body.classList.remove('dark');
-    document.body.classList.add('light');
-    localStorage.setItem('theme', 'light');
-  } else {
-    document.body.classList.remove('light');
-    document.body.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
+  // Set initial mode
+  if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", "dark");
   }
-});
+
+  const currentTheme = localStorage.getItem("theme");
+  document.body.classList.add(currentTheme);
+
+  // Toggle dark/light mode
+  darkModeToggle.addEventListener("click", () => {
+    if (document.body.classList.contains("dark")) {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+  });
+
+  const images = [
+    "assets/profile/1.jpg",
+    // "assets/profile/2.jpg",
+    "assets/profile/3.jpg",
+    "assets/profile/4.jpg",
+    // "assets/profile/5.jpg",
+    //"assets/profile/6.jpg",
+    "assets/profile/7.jpg",
+    //"assets/profile/8.jpg",
+    //"assets/profile/9.jpg",
+    "assets/profile/10.jpg",
+    //"assets/profile/11.jpg",
+  ];
+
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
+  document.getElementById("profile-pic").src = randomImage;
 
   // Handle section highlighting on scroll
   const sections = document.querySelectorAll("section");
@@ -113,7 +130,7 @@ darkModeToggle.addEventListener('click', () => {
   links.forEach((link) => {
     link.addEventListener("mouseover", () => cursor?.classList.add("hover"));
     link.addEventListener("mouseleave", () =>
-      cursor?.classList.remove("hover")
+      cursor?.classList.remove("hover"),
     );
   });
 
@@ -179,20 +196,20 @@ const handleOnMove = (e) => {
     parseFloat(track.dataset.prevPercentage) + percentage;
   const nextPercentage = Math.max(
     Math.min(nextPercentageUnconstrained, 0),
-    -100
+    -100,
   );
 
   track.dataset.percentage = nextPercentage;
 
   track.animate(
     { transform: `translate(${nextPercentage}%, -50%)` },
-    { duration: 1200, fill: "forwards" }
+    { duration: 1200, fill: "forwards" },
   );
 
   for (const image of track.getElementsByClassName("image")) {
     image.animate(
       { objectPosition: `${100 + nextPercentage}% center` },
-      { duration: 1200, fill: "forwards" }
+      { duration: 1200, fill: "forwards" },
     );
   }
 };
@@ -218,20 +235,20 @@ const handleArticleOnMove = (e) => {
     parseFloat(articleTrack.dataset.prevPercentage) + percentage;
   const nextPercentage = Math.max(
     Math.min(nextPercentageUnconstrained, 0),
-    -100
+    -100,
   );
 
   articleTrack.dataset.percentage = nextPercentage;
 
   articleTrack.animate(
     { transform: `translate(${nextPercentage}%, -50%)` },
-    { duration: 1200, fill: "forwards" }
+    { duration: 1200, fill: "forwards" },
   );
 
   for (const article of articleTrack.getElementsByClassName("article-image")) {
     article.animate(
       { objectPosition: `${100 + nextPercentage}% center` },
-      { duration: 1200, fill: "forwards" }
+      { duration: 1200, fill: "forwards" },
     );
   }
 };
