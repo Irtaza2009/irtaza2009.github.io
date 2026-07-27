@@ -24,22 +24,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const images = [
-    "assets/profile/1.jpg",
-    // "assets/profile/2.jpg",
-    "assets/profile/3.jpg",
-    "assets/profile/4.jpg",
-    // "assets/profile/5.jpg",
+    { src: "assets/profile/1.jpg", weight: 3 },
+    { src: "assets/profile/2.jpg", weight: 2.5 },
+    { src: "assets/profile/3.jpg", weight: 2 },
+    { src: "assets/profile/4.jpg", weight: 1.5 },
+    { src: "assets/profile/5.jpg", weight: 1 },
     //"assets/profile/6.jpg",
-    "assets/profile/7.jpg",
+    //"assets/profile/7.jpg",
     //"assets/profile/8.jpg",
     //"assets/profile/9.jpg",
-    "assets/profile/10.jpg",
+    //"assets/profile/10.jpg",
     //"assets/profile/11.jpg",
   ];
 
-  const randomImage = images[Math.floor(Math.random() * images.length)];
+  const totalWeight = images.reduce((sum, img) => sum + img.weight, 0);
 
-  document.getElementById("profile-pic").src = randomImage;
+  let random = Math.random() * totalWeight;
+
+  for (const image of images) {
+    random -= image.weight;
+    if (random < 0) {
+      document.getElementById("profile-pic").src = image.src;
+      break;
+    }
+  }
 
   // Handle section highlighting on scroll
   const sections = document.querySelectorAll("section");
