@@ -11,10 +11,8 @@ Available commands
 <a href="#contact">curl irtaza.xyz</a>    Contact
 <a href="#git-shortlog">git shortlog</a>       GitHub stats
 <a href="#quests">cat goals.md</a>       Current goals
-ps -u irtaza       Running processes
-pokedex            Favourite Pokemon
-bookshelf          Reading list
-brew coffee        Coffee Status
+<a href="#pokedex">pokedex</a>            Favourite Pokemon
+<a href="#bookshelf">bookshelf</a>          Reading list
 </pre>
 
 </div>
@@ -136,11 +134,29 @@ HTTP/2 200 OK
 
 ---
 
-### `irtaza@github:~$ exit`
+<a id="pokedex"></a>
+
+### `irtaza@github:~$ pokedex --favorite`
+
+<pre>
+<b>Pokemon:</b>          Greninja
+<b>Region:</b>           Kalos
+<b>Starter:</b>          Froakie
+<b>Legendary pick:</b>   Hoopa
+<b>Favorite game:</b>    Pokopia
+</pre>
+
+---
+
+<a id="bookshelf"></a>
+
+### `~/home/irtaza $ cat bookshelf.md`
 
 ```
-logout
-Connection to github closed.
+Currently reading:
+  And Then There Were None
 
-See you next commit.
+Favorites (lots, but top 2):
+  Percy Jackson
+  Chronicles of Narnia
 ```
