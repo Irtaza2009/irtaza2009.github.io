@@ -160,3 +160,47 @@ Favorites (lots, but top 2):
   Percy Jackson
   Chronicles of Narnia
 ```
+
+---
+
+<details>
+<summary><code>~/home/irtaza $ sl</code></summary>
+
+```
+     ====        ________                ___________
+  _D _|  |_______/        \__I_I_____===__|_________|
+   |(_)---  |   H\________/ |   |        =|___ ___|
+   /     |  |   H  |  |     |   |         ||_| |_||
+  |      |  |   H  |__--------------------| [___] |
+  | ________|___H__/__|_____/[][]~\_______|       |
+  |/ |   |-----------I_____I [][] []  D   |=======|
+__/ =| o |=-~~\  /~~\  /~~\  /~~\ ____Pl__|_____.-'
+ |/-=|___|=    ||    ||    ||    |_____________|
+  \_/      \O=====O=====O=====O_/
+```
+
+Typed `sl` instead of `ls` again. Classic.
+
+(also this ^ is a train!!)
+
+</details>
+
+<details>
+<summary><code>~/home/irtaza $ sudo make cool-stuff</code></summary>
+
+```
+[sudo] password for irtaza: ********
+Compiling...
+Done.
+```
+
+</details>
+
+<details>
+<summary>Konami code</summary>
+
+```
+↑ ↑ ↓ ↓ ← → ← → B A — try it on the live site. Here it just unlocks this sentence. On the site, it does nothing!
+```
+
+</details>
