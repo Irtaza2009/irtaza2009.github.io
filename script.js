@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const images = [
-    { src: "assets/profile/1.jpg", weight: 3 },
-    { src: "assets/profile/2.jpg", weight: 2.5 },
-    { src: "assets/profile/3.jpg", weight: 2 },
-    { src: "assets/profile/4.jpg", weight: 1.5 },
-    { src: "assets/profile/5.jpg", weight: 1 },
+    //{ src: "assets/profile/1.jpg", weight: 3 },
+    { src: "assets/profile/2.jpg", weight: 10 },
+    //{ src: "assets/profile/3.jpg", weight: 2 },
+    //{ src: "assets/profile/4.jpg", weight: 1.5 },
+    //{ src: "assets/profile/5.jpg", weight: 1 },
     //"assets/profile/6.jpg",
     //"assets/profile/7.jpg",
     //"assets/profile/8.jpg",
