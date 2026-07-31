@@ -14,7 +14,7 @@ brew coffee        Coffee Status
 git shortlog       GitHub stats
 cat goals.md       Current goals
 ps -u irtaza       Running processes
-curl irtaza.xyz    Contact
+<a href="#contact">curl irtaza.xyz</a>    Contact
 </pre>
 
 </div>
@@ -40,7 +40,7 @@ Dev. Maker. Game Developer.
 <table>
 <tr>
 <td width="170">
-<img src="will probably make a mascot and its image here" width="150" alt="IrtOS"/>
+<img src="greninja.svg" width="150" alt="IrtOS"/>
 
 </td>
 <td>
