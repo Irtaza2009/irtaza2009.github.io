@@ -8,13 +8,13 @@ Available commands
 <a href="#whoami">whoami</a>             About me
 <a href="#neofetch">neofetch</a>           System information
 <a href="#tree">tree</a>               Featured Projects
+<a href="#contact">curl irtaza.xyz</a>    Contact
+<a href="#git-shortlog">git shortlog</a>       GitHub stats
+<a href="#quests">cat goals.md</a>       Current goals
+ps -u irtaza       Running processes
 pokedex            Favourite Pokemon
 bookshelf          Reading list
 brew coffee        Coffee Status
-git shortlog       GitHub stats
-cat goals.md       Current goals
-ps -u irtaza       Running processes
-<a href="#contact">curl irtaza.xyz</a>    Contact
 </pre>
 
 </div>
@@ -95,6 +95,16 @@ projects
 3 directories, 6 favourite projects
 </pre>
 
+---
+
+<a id="git-shortlog"></a>
+
+### `irtaza@github:~$ git shortlog`
+
+![GitHub Streak](https://streak-stats.demolab.com/?user=Irtaza2009&theme=catppuccin-mocha&hide_border=true)
+
+---
+
 <a id="contact"></a>
 
 ### `irtaza@github:~$ curl irtaza.xyz`
@@ -110,6 +120,21 @@ HTTP/2 200 OK
     "<a href="mailto:irtazanaqvi05@gmail.com">email</a>": "available"
 }
 </pre>
+
+---
+
+<a id="quests"></a>
+
+### `irtaza@github:~$ cat goals.md`
+
+```
+███████░░░ First released mobile game
+████████░░ YouTube devlogs
+██████░░░░ Useful Open-source software
+█████░░░░░ Win more hackathons
+```
+
+---
 
 ### `irtaza@github:~$ exit`
 
