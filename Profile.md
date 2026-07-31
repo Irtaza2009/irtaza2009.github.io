@@ -1,5 +1,3 @@
-<div>
-
 ### `irtaza@github:~$ help`
 
 <pre>
@@ -14,8 +12,6 @@ Available commands
 <a href="#pokedex">pokedex</a>            Favourite Pokemon
 <a href="#bookshelf">bookshelf</a>          Reading list
 </pre>
-
-</div>
 
 ---
 
@@ -150,7 +146,7 @@ HTTP/2 200 OK
 
 <a id="bookshelf"></a>
 
-### `~/home/irtaza $ cat bookshelf.md`
+### `irtaza@github:~$ cat bookshelf.md`
 
 ```
 Currently reading:
@@ -164,7 +160,7 @@ Favorites (lots, but top 2):
 ---
 
 <details>
-<summary><code>~/home/irtaza $ sl</code></summary>
+<summary><code>irtaza@github:~$ sl</code></summary>
 
 ```
      ====        ________                ___________
@@ -186,7 +182,7 @@ Typed `sl` instead of `ls` again. Classic.
 </details>
 
 <details>
-<summary><code>~/home/irtaza $ sudo make cool-stuff</code></summary>
+<summary><code>irtaza@github:~$ sudo make cool-stuff</code></summary>
 
 ```
 [sudo] password for irtaza: ********
@@ -213,6 +209,6 @@ Done.
 
 <br>
 
-<code>~/home/irtaza $</code> <img src="cursor.svg" width="10" height="16" alt="cursor" valign="middle"/>
+<code>irtaza@github:~$</code> <img src="cursor.svg" width="10" height="16" alt="cursor" valign="middle"/>
 
 </div>
