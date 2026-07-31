@@ -486,6 +486,37 @@ h2::after {
   text-decoration: none;
 }
 
+.hero-cta {
+  margin: 1vh 0 2vh;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.1rem;
+  border: 1px solid var(--link-color);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--link-color);
+  transition:
+    color 0.3s,
+    background-color 0.3s,
+    transform 0.3s;
+}
+
+.cta-button:hover {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}
+
+.cta-note {
+  margin: 0.55rem 0 0;
+  color: #686868;
+  font-size: 0.85rem;
+}
+
 /* Media Query for Smaller Screens */
 @media (max-width: 800px) {
   .menu {
