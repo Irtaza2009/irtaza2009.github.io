@@ -204,3 +204,15 @@ Done.
 ```
 
 </details>
+
+---
+
+<div align="center">
+
+<img src="https://komarev.com/ghpvc/?username=Irtaza2009&label=Visitors&color=cba6f7&style=flat" alt="visitor count"/>
+
+<br>
+
+<code>~/home/irtaza $</code> <img src="cursor.svg" width="10" height="16" alt="cursor" valign="middle"/>
+
+</div>
