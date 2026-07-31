@@ -6,8 +6,8 @@
 Available commands
 
 <a href="#whoami">whoami</a>             About me
-neofetch           System information
-tree               Featured Projects
+<a href="#neofetch">neofetch</a>           System information
+<a href="#tree">tree</a>               Featured Projects
 pokedex            Favourite Pokemon
 bookshelf          Reading list
 brew coffee        Coffee Status
@@ -25,13 +25,11 @@ curl irtaza.xyz    Contact
 
 ### `irtaza@github:~$ whoami`
 
-```text
-Syed Muhammad Irtaza
-
+<pre>
+<b>Syed Muhammad Irtaza</b>
 Dev. Maker. Game Developer.
-
-I try to build cool stuff!
-```
+<b><i>I try to build cool stuff!</i></b>
+</pre>
 
 ---
 
@@ -43,6 +41,7 @@ I try to build cool stuff!
 <tr>
 <td width="170">
 <img src="will probably make a mascot and its image here" width="150" alt="IrtOS"/>
+
 </td>
 <td>
 
@@ -65,7 +64,7 @@ Languages:
 ██████░░░░ React
 █████░░░░░ Python
 
-Stack: Unity · RP2040 · KiCad · Raspberry Pi · Git
+Stack: Unity · RP2040 · KiCad · Premiere Pro · Figma
 ```
 
 </td>
@@ -73,3 +72,50 @@ Stack: Unity · RP2040 · KiCad · Raspberry Pi · Git
 </table>
 
 ---
+
+<a id="tree"></a>
+
+### `irtaza@github:~$ tree projects/`
+
+<pre>
+projects
+│
+├── games
+│   ├── <a href="https://irtaza.itch.io/cozy-farm">Cozy Farm</a>
+│   └── <a href="https://irtaza.itch.io/dicefront">Dicefront</a>
+│
+├── hardware
+│   ├── <a href="https://github.com/Irtaza2009/PiShot">PiShot</a>
+│   └── <a href="https://github.com/Irtaza2009/Hackamon">Hackamon</a>
+│
+└── tools
+    ├── <a href="https://github.com/Irtaza2009/Arena">Arena</a>
+    └── <a href="https://github.com/Irtaza2009/HC-Stickers-Manager">Sticker Manager</a>
+
+3 directories, 6 favourite projects
+</pre>
+
+<a id="contact"></a>
+
+### `irtaza@github:~$ curl irtaza.xyz`
+
+<pre>
+HTTP/2 200 OK
+
+{
+    "<a href="https://irtaza.xyz">portfolio</a>": "online",
+    "<a href="https://github.com/Irtaza2009">github</a>": "connected",
+    "<a href="https://www.youtube.com/@DevStuff5">youtube</a>": "creating",
+    "<a href="https://www.instagram.com/irtaza.dev.stuff">instagram</a>": "active",
+    "<a href="mailto:irtazanaqvi05@gmail.com">email</a>": "available"
+}
+</pre>
+
+### `irtaza@github:~$ exit`
+
+```
+logout
+Connection to github closed.
+
+See you next commit.
+```
