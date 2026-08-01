@@ -140,7 +140,7 @@ section {
 
 h2 {
   font-size: 2.5vw;
-  margin-bottom: 3vh;
+  margin-bottom: 4vh;
   position: relative;
   display: inline-block;
 }
@@ -159,6 +159,7 @@ h2::after {
 
 .showcase-heading {
   font-size: 4vw;
+  margin-bottom: 2vh;
   position: relative;
   display: inline-block;
 }
@@ -296,6 +297,16 @@ h2::after {
   color: #6db5ff;
 }
 
+.publication-site {
+  margin-top: 1.25rem !important;
+  color: #8b8b8b !important;
+  font-size: 0.82rem !important;
+}
+
+.publication-site span {
+  color: var(--link-color);
+}
+
 .card-tech {
   display: flex;
   gap: 0.6rem;
@@ -342,6 +353,81 @@ h2::after {
 
 .card-footer .visit-link {
   text-align: right;
+}
+
+#articles .card {
+  justify-self: center;
+}
+
+.additional-articles {
+  width: min(620px, 100%);
+  margin: 2rem auto 0;
+  border: 1px solid var(--link-color);
+  border-radius: 0.6rem;
+  background: var(--card-bg-color);
+  text-align: left;
+}
+
+.additional-articles summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  color: var(--link-color);
+  list-style: none;
+}
+
+.additional-articles summary::-webkit-details-marker {
+  display: none;
+}
+
+.additional-articles summary::after {
+  content: "▾";
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+.additional-articles[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.additional-articles-count {
+  color: #8b8b8b;
+  font-size: 0.8rem;
+}
+
+.article-links {
+  border-top: 1px solid var(--text-color);
+}
+
+.article-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.article-links a + a {
+  border-top: 1px solid var(--text-color);
+}
+
+.article-links a:hover {
+  background: var(--card-hover-bg-color);
+  color: var(--link-color);
+}
+
+.article-links small {
+  flex-shrink: 0;
+  color: var(--link-color);
+  font-size: 0.78rem;
 }
 
 .section-heading-column {
