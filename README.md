@@ -2,9 +2,9 @@
 
 **_My personal portfolio!_**
 
-Live at: https://www.irtaza.xyz/
+**Live at: https://www.irtaza.xyz**
 
-Submitted to a [Hack Club](https://hackclub.com/) program too!
+Also made this cool markdown summary [portfolio](https://github.com/Irtaza2009/irtaza2009.github.io/blob/main/Profile.md)!
 
 ## Technologies Used
 
@@ -25,3 +25,7 @@ Submitted to a [Hack Club](https://hackclub.com/) program too!
 ## About
 
 ![Dark Theme About](https://www.irtaza.xyz/assets/About.png)
+
+## Blog
+
+![Blog](https://www.irtaza.xyz/assets/Blog-Section.png)
