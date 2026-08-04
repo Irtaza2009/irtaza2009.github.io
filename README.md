@@ -6,6 +6,8 @@
 
 Also made this cool markdown summary [portfolio](https://github.com/Irtaza2009/irtaza2009.github.io/blob/main/Profile.md)!
 
+The site includes some my software, games, hardware projects, articles, and blog posts!
+
 ## Technologies Used
 
 - HTML
@@ -29,3 +31,13 @@ Also made this cool markdown summary [portfolio](https://github.com/Irtaza2009/i
 ## Blog
 
 ![Blog](https://www.irtaza.xyz/assets/Blog-Section.png)
+
+## Running locally
+
+There is no build step. From this folder, run:
+
+```bash
+python -m http.server 8000
+```
+
+Then open [localhost:8000](http://localhost:8000).
