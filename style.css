@@ -439,6 +439,150 @@ h2::after {
   margin-bottom: 3vh;
 }
 
+.section-intro {
+  max-width: 42rem;
+  margin: 0;
+  color: #8b8b8b;
+}
+
+.rune-games-highlight {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--text-color);
+}
+
+.rune-games-highlight .section-heading-column {
+  margin-bottom: 2rem;
+}
+
+.rune-games-highlight .section-heading-column h3 {
+  margin: 0;
+  color: var(--bold-color);
+  font-size: 1.7rem;
+}
+
+.rune-game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.rune-game-card {
+  box-sizing: border-box;
+  min-height: 220px;
+  padding: 1.25rem;
+  border: 1px solid var(--link-color);
+  border-radius: 0.75rem;
+  background: var(--card-bg-color);
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.rune-game-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.rune-game-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--link-color);
+  font-size: 0.85rem;
+}
+
+.rune-game-card h3 {
+  margin: 1.4rem 0 0.35rem;
+  color: var(--bold-color);
+  font-size: 1.45rem;
+}
+
+.rune-play-count {
+  margin: 0;
+  color: var(--link-color);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.rune-play-count span {
+  color: var(--text-color);
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.rune-game-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 1.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--text-color);
+  color: #8b8b8b;
+  font-size: 0.85rem;
+}
+
+.rune-game-stats i {
+  width: 1.35rem;
+  color: var(--link-color);
+}
+
+.rune-game-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  color: var(--link-color);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.rune-game-link:hover {
+  color: #6db5ff;
+  transform: translateX(3px);
+}
+
+.rune-total-stats {
+  width: min(760px, 100%);
+  margin: 1.5rem auto 2rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--link-color);
+  border-radius: 0.75rem;
+  background: var(--card-bg-color);
+}
+
+.rune-total-stats p {
+  margin: 0 0 0.75rem;
+  color: #8b8b8b;
+  font-size: 0.82rem;
+}
+
+.rune-total-stats div {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem 2rem;
+  flex-wrap: wrap;
+}
+
+.rune-total-stats span {
+  color: #8b8b8b;
+  font-size: 0.85rem;
+}
+
+.rune-total-stats strong {
+  display: block;
+  color: var(--link-color);
+  font-size: 1.2rem;
+}
+
+.rune-games-note {
+  margin: 1.25rem 0 0;
+  color: #8b8b8b;
+  font-size: 0.8rem;
+}
+
 .view-all-link,
 .read-post-link {
   color: var(--link-color);
