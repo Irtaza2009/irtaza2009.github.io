@@ -14,32 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const images = [
-    //{ src: "assets/profile/1.jpg", weight: 3 },
-    { src: "assets/profile/2.jpg", weight: 10 },
-    //{ src: "assets/profile/3.jpg", weight: 2 },
-    //{ src: "assets/profile/4.jpg", weight: 1.5 },
-    //{ src: "assets/profile/5.jpg", weight: 1 },
-    //"assets/profile/6.jpg",
-    //"assets/profile/7.jpg",
-    //"assets/profile/8.jpg",
-    //"assets/profile/9.jpg",
-    //"assets/profile/10.jpg",
-    //"assets/profile/11.jpg",
-  ];
-
-  const totalWeight = images.reduce((sum, img) => sum + img.weight, 0);
-
-  let random = Math.random() * totalWeight;
-
-  for (const image of images) {
-    random -= image.weight;
-    if (random < 0) {
-      document.getElementById("profile-pic").src = image.src;
-      break;
-    }
-  }
-
   // Handle section highlighting on scroll
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".scroll-indicator a");
@@ -49,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 200) {
+      if (window.scrollY >= sectionTop - 200) {
         current = section.getAttribute("id");
       }
     });
@@ -60,33 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         link.classList.add("active");
       }
     });
-
-    // Show sections on scroll
-    const screenPosition = window.innerHeight / 1.3;
-
-    const aboutMeSection = document.getElementById("about-me");
-    if (
-      aboutMeSection &&
-      aboutMeSection.getBoundingClientRect().top < screenPosition
-    ) {
-      aboutMeSection.classList.add("visible");
-    }
-
-    const portfolioSection = document.getElementById("portfolio");
-    if (
-      portfolioSection &&
-      portfolioSection.getBoundingClientRect().top < screenPosition
-    ) {
-      portfolioSection.classList.add("visible");
-    }
-
-    const articlesSection = document.getElementById("articles");
-    if (
-      articlesSection &&
-      articlesSection.getBoundingClientRect().top < screenPosition
-    ) {
-      articlesSection.classList.add("visible");
-    }
   });
 
   // Smooth scroll for anchor links

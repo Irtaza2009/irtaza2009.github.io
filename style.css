@@ -29,7 +29,6 @@
 
 body {
   font-family: "0xProto", monospace;
-  src: url("/fonts/0xProtoNerdFont-Regular.ttf") format("truetype");
   margin: 0;
   padding: 0;
   background: var(--bg-color);
@@ -185,7 +184,6 @@ h2::after {
   max-width: 70vw;
   margin: 2vh auto 20vh auto;
   text-align: left;
-  animation: fadeInUp 1s ease-in-out;
 }
 
 .card-image {
@@ -477,7 +475,9 @@ h2::after {
   background: var(--card-bg-color);
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .rune-game-card:hover {
@@ -536,7 +536,9 @@ h2::after {
   color: var(--link-color);
   font-size: 0.9rem;
   text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .rune-game-link:hover {
