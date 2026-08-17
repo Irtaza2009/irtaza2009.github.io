@@ -186,6 +186,19 @@ h2::after {
   text-align: left;
 }
 
+#about-me a {
+  text-decoration: underline;
+  color: var(--bold-color);
+}
+
+#about-me a:hover {
+  color: #6db5ff;
+}
+
+#about-me li {
+  margin-bottom: 0.05rem;
+}
+
 .card-image {
   position: relative;
   width: 100%;
