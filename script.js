@@ -1,6 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
   const darkModeToggle = document.getElementById("darkmode-toggle");
 
+  const initializeParticles = () => {
+    const isDarkMode = document.body.classList.contains("dark");
+    const lineColor = isDarkMode ? "#ffffff" : "#434853";
+
+    particlesJS("particles-js", {
+      particles: {
+        color: { value: "#6db5ff" },
+        number: { value: 100 },
+        size: { value: 4 },
+        move: { speed: 1 },
+        line_linked: {
+          color: lineColor,
+        },
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+        },
+        modes: {
+          repulse: { distance: 50 },
+        },
+      },
+    });
+  };
+
+  // Initialize particles on page load
+  initializeParticles();
+
   // Toggle dark/light mode
   darkModeToggle.addEventListener("click", () => {
     if (document.body.classList.contains("dark")) {
@@ -12,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("dark");
       localStorage.setItem("theme", "dark");
     }
+    // Reinitialize particles with new line color
+    initializeParticles();
   });
 
   // Handle section highlighting on scroll
