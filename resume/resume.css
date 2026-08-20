@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "0xProto";
+  src: url("../fonts/0xProtoNerdFont-Regular.ttf") format("truetype");
+}
+
+:root {
+  --bg: #282c34;
+  --card: #3c3f47;
+  --text: #ffffff;
+  --muted: #b3b3b3;
+  --accent: #e5cab7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "0xProto", monospace;
+  line-height: 1.6;
+}
+
+b {
+  color: var(--accent);
+}
+
+.resume {
+  width: min(900px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.breadcrumb a,
+.contact-links a,
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.contact-links a:hover,
+a:hover {
+  color: #6db5ff;
+}
+
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0.4rem 0;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+section {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid #4b4f58;
+}
+
+.headline,
+section p {
+  max-width: 70ch;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+
+.entry {
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-radius: 0.3rem;
+}
+
+.entry-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.entry-heading span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.entry p {
+  margin: 0.6rem 0 0;
+}
+
+.skills {
+  color: var(--muted);
+}
+
+@media (max-width: 650px) {
+  .resume {
+    padding-top: 1.5rem;
+  }
+
+  .resume-header,
+  .entry-heading {
+    flex-direction: column;
+  }
+
+  .contact-links {
+    align-items: flex-start;
+  }
+}
+
+.location {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
