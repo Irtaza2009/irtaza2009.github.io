@@ -99,7 +99,7 @@ header h1 {
 
 .description {
   font-size: 1.7vw;
-  margin: 1vh 0 2vh 0;
+  margin: 1vh 15vw 2vh 15vw;
   color: #686868;
 }
 
@@ -712,6 +712,7 @@ h2::after {
   padding: 0;
   background: transparent;
   border: none;
+  white-space: nowrap;
 }
 
 .menu ul li a {
@@ -731,7 +732,7 @@ h2::after {
 }
 
 .hero-cta {
-  margin: 1vh 0 2vh;
+  margin: 2vh 0 2vh;
 }
 
 .cta-button {
@@ -756,24 +757,31 @@ h2::after {
 }
 
 .cta-note {
-  margin: 0.55rem 0 0;
+  margin: 1rem 0 0;
   color: #686868;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 /* Media Query for Smaller Screens */
-@media (max-width: 800px) {
+@media (min-width: 601px) and (max-width: 950px) {
   .menu {
-    top: 1vh;
+    top: 1.2rem;
+    left: calc(50% + 2rem);
+    width: calc(100vw - 5rem);
+    max-width: none;
   }
 
   .menu ul {
-    gap: 3vw;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
   }
 
   .menu ul li a {
-    font-size: 0.9rem;
-    padding: 0.5vh 2vw;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.15rem;
   }
 }
 
@@ -866,6 +874,7 @@ h2::after {
 
   .description {
     font-size: 3vw;
+    margin: 1vh 2vw 2vh 2vw;
   }
 
   h2 {
@@ -946,7 +955,7 @@ section {
 /* Dark Mode Toggle */
 .darkmode-toggle {
   position: absolute;
-  top: 3vh;
+  top: 5vh;
   left: 1.5vw;
   z-index: 2000;
   cursor: pointer;
@@ -994,6 +1003,13 @@ body.dark .darkmode-toggle .light-icon {
 body.dark .darkmode-toggle .dark-icon {
   opacity: 1;
   transform: scale(1);
+}
+
+@media (min-width: 601px) and (max-width: 950px) {
+  .darkmode-toggle {
+    top: 1.2rem;
+    left: 1.25rem;
+  }
 }
 
 /* Media Query for Smaller Screens */
