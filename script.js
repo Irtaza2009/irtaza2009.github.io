@@ -110,4 +110,12 @@ document.addEventListener("DOMContentLoaded", () => {
       cursor?.classList.remove("hover"),
     );
   });
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+  });
 });

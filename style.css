@@ -763,7 +763,7 @@ h2::after {
 }
 
 /* Media Query for Smaller Screens */
-@media (min-width: 601px) and (max-width: 950px) {
+@media (min-width: 701px) and (max-width: 950px) {
   .menu {
     top: 1.2rem;
     left: calc(50% + 2rem);
@@ -785,16 +785,72 @@ h2::after {
   }
 }
 
-@media (max-width: 600px) {
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .menu-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2001;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--link-color);
+    border-radius: 0.35rem;
+    background: var(--bg-color);
+    color: var(--link-color);
+    font: inherit;
+    font-size: 0.85rem;
+  }
+
+  .menu {
+    position: absolute;
+    top: 4.5rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    max-width: none;
+    transform: none;
+    display: none;
+    padding: 0.75rem;
+    background: var(--bg-color);
+    border: 1px solid var(--link-color);
+    border-radius: 0.5rem;
+  }
+
+  .menu.is-open {
+    display: block;
+  }
+
   .menu ul {
     flex-direction: column;
-    gap: 1vh;
-    text-align: center;
+    gap: 0.2rem;
+    align-items: stretch;
+  }
+
+  .menu ul li {
+    width: 100%;
   }
 
   .menu ul li a {
-    font-size: 0.8rem;
-    padding: 1vh 3vw;
+    display: block;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .darkmode-toggle {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .darkmode-toggle .light-icon,
+  .darkmode-toggle .dark-icon {
+    font-size: 1.35rem;
   }
 }
 
@@ -841,7 +897,7 @@ h2::after {
   left: 0;
   top: 0;
   transform: translate(calc(-50% + 15px), -50%);
-  z-index: 2000;
+  z-index: 2002;
 }
 
 .cursor2 {
@@ -873,7 +929,7 @@ h2::after {
   }
 
   .description {
-    font-size: 3vw;
+    font-size: clamp(0.95rem, 3.5vw, 1.2rem);
     margin: 1vh 2vw 2vh 2vw;
   }
 
@@ -1005,7 +1061,7 @@ body.dark .darkmode-toggle .dark-icon {
   transform: scale(1);
 }
 
-@media (min-width: 601px) and (max-width: 950px) {
+@media (min-width: 701px) and (max-width: 950px) {
   .darkmode-toggle {
     top: 1.2rem;
     left: 1.25rem;
