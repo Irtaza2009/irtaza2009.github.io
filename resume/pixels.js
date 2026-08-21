@@ -1,21 +1,100 @@
 const canvas = document.getElementById("resume-pixels");
 const context = canvas.getContext("2d");
 
-const pixelColors = ["#e5cab7", "#6db5ff"];
-const updateEveryMs = 140;
+const startingCells = [
+  // verticle pattern, left
+  [5, 1],
+  [6, 1],
+  [5, 2],
+  [6, 2],
+  [5, 11],
+  [6, 11],
+  [7, 11],
+  [4, 12],
+  [8, 12],
+  [3, 13],
+  [9, 13],
+  [3, 14],
+  [9, 14],
+  [6, 15],
+  [4, 16],
+  [8, 16],
+  [5, 17],
+  [6, 17],
+  [7, 17],
+  [6, 18],
+  [3, 21],
+  [4, 21],
+  [5, 21],
+  [3, 22],
+  [4, 22],
+  [5, 22],
+  [2, 23],
+  [6, 23],
+  [1, 25],
+  [2, 25],
+  [6, 25],
+  [7, 25],
+  [3, 35],
+  [4, 35],
+  [3, 36],
+  [4, 36],
+];
 
-let cellSize = 14;
-let columns = 0;
-let rows = 0;
-let generation = 0;
-let liveCells = new Set();
+const topPattern = [
+  // horizontal pattern, top mid-right
+  [1, 5],
+  [1, 6],
+  [2, 5],
+  [2, 6],
+  [11, 5],
+  [11, 6],
+  [11, 7],
+  [12, 4],
+  [12, 8],
+  [13, 3],
+  [13, 9],
+  [14, 3],
+  [14, 9],
+  [15, 6],
+  [16, 4],
+  [16, 8],
+  [17, 5],
+  [17, 6],
+  [17, 7],
+  [18, 6],
+  [21, 3],
+  [21, 4],
+  [21, 5],
+  [22, 3],
+  [22, 4],
+  [22, 5],
+  [23, 2],
+  [23, 6],
+  [25, 1],
+  [25, 2],
+  [25, 6],
+  [25, 7],
+  [35, 3],
+  [35, 4],
+  [36, 3],
+  [36, 4],
+];
 
-function cellKey(x, y) {
+const colors = ["#e5cab7", "#6db5ff"];
+
+let cellSize;
+let columns;
+let rows;
+let liveCells;
+let lastUpdate = 0;
+
+function key(x, y) {
   return `${x}:${y}`;
 }
 
-function readCell(key) {
-  return key.split(":").map(Number);
+function coordinates(cell) {
+  return cell.split(":").map(Number);
 }
 
 function wrap(value, max) {
@@ -25,29 +104,30 @@ function wrap(value, max) {
 function resizeCanvas() {
   const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 
-  const width = window.innerWidth * pixelRatio;
-  const height = window.innerHeight * pixelRatio;
+  canvas.width = window.innerWidth * pixelRatio;
+  canvas.height = window.innerHeight * pixelRatio;
 
   context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-  cellSize = Math.max(
-    12,
-    Math.floor(Math.min(window.innerWidth, window.innerHeight) / 65),
-  );
+  // Same sizing idea as the original code.
+  cellSize = Math.min(window.innerWidth, window.innerHeight) / 70;
   columns = Math.ceil(window.innerWidth / cellSize);
   rows = Math.ceil(window.innerHeight / cellSize);
 
-  liveCells = new Set();
-  seedCells(140);
+  resetPattern();
 }
 
-function seedCells(amount) {
-  for (let i = 0; i < amount; i++) {
-    const x = Math.floor(Math.random() * columns);
-    const y = Math.floor(Math.random() * rows);
+function resetPattern() {
+  // Keep the tall pattern at the left, plus a wide copy near the upper right.
+  const topPatternOffsetX = Math.max(10, Math.floor(columns * 0.57) - 17);
+  const topPatternOffsetY = 1;
 
-    liveCells.add(cellKey(x, y));
-  }
+  liveCells = new Set([
+    ...startingCells.map(([x, y]) => key(x, y)),
+    ...topPattern.map(([x, y]) =>
+      key(x + topPatternOffsetX, y + topPatternOffsetY),
+    ),
+  ]);
 }
 
 function getNeighbours(x, y) {
@@ -59,10 +139,7 @@ function getNeighbours(x, y) {
         continue;
       }
 
-      const neighbourX = wrap(x + xOffset, columns);
-      const neighbourY = wrap(y + yOffset, rows);
-
-      neighbours.push(cellKey(neighbourX, neighbourY));
+      neighbours.push(key(wrap(x + xOffset, columns), wrap(y + yOffset, rows)));
     }
   }
 
@@ -70,15 +147,16 @@ function getNeighbours(x, y) {
 }
 
 function countLiveNeighbours(x, y) {
-  return getNeighbours(x, y).filter((key) => liveCells.has(key)).length;
+  return getNeighbours(x, y).filter((cell) => liveCells.has(cell)).length;
 }
 
-function getNextGeneration() {
+function nextGeneration() {
   const cellsToCheck = new Set();
 
-  liveCells.forEach((key) => {
-    const [x, y] = readCell(key);
-    cellsToCheck.add(key);
+  liveCells.forEach((cell) => {
+    const [x, y] = coordinates(cell);
+
+    cellsToCheck.add(cell);
 
     getNeighbours(x, y).forEach((neighbour) => {
       cellsToCheck.add(neighbour);
@@ -87,54 +165,47 @@ function getNextGeneration() {
 
   const nextCells = new Set();
 
-  cellsToCheck.forEach((key) => {
-    const [x, y] = readCell(key);
-    const neighbours = countLiveNeighbours(x, y);
-    const isAlive = liveCells.has(key);
+  cellsToCheck.forEach((cell) => {
+    const [x, y] = coordinates(cell);
+    const neighbourCount = countLiveNeighbours(x, y);
+    const isAlive = liveCells.has(cell);
 
-    if (neighbours === 3 || (isAlive && neighbours === 2)) {
-      nextCells.add(key);
+    if (neighbourCount === 3 || (isAlive && neighbourCount === 2)) {
+      nextCells.add(cell);
     }
   });
 
-  return nextCells;
+  liveCells = nextCells;
 }
 
-function drawCells() {
+function draw() {
   context.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-  liveCells.forEach((key) => {
-    const [x, y] = readCell(key);
-    const colorIndex = (x + y + generation) % pixelColors.length;
+  liveCells.forEach((cell) => {
+    const [x, y] = coordinates(cell);
 
-    context.globalAlpha = 0.35 + Math.random() * 0.35;
-    context.fillStyle = pixelColors[colorIndex];
+    // This small random alpha variation is the flicker.
+    context.globalAlpha = 0.4 + Math.random() * 0.35;
+    context.fillStyle = colors[(x + y) % colors.length];
 
-    context.fillRect(
-      x * cellSize,
-      y * cellSize,
-      Math.max(2, cellSize - 8),
-      Math.max(2, cellSize - 8),
-    );
+    context.fillRect(x * cellSize, y * cellSize, cellSize - 1, cellSize - 1);
   });
 
   context.globalAlpha = 1;
 }
 
-function update() {
-  liveCells = getNextGeneration();
-  generation += 1;
-
-  // faking game of life patterns because it will probably die out
-  if (generation % 45 === 0 || liveCells.size < 20) {
-    seedCells(35);
+function animate(timestamp) {
+  if (timestamp - lastUpdate > 66) {
+    nextGeneration();
+    draw();
+    lastUpdate = timestamp;
   }
 
-  drawCells();
+  requestAnimationFrame(animate);
 }
 
 window.addEventListener("resize", resizeCanvas);
 
 resizeCanvas();
-drawCells();
-window.setInterval(update, updateEveryMs);
+draw();
+requestAnimationFrame(animate);
