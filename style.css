@@ -842,16 +842,6 @@ h2::after {
     font-size: 0.9rem;
     text-align: left;
   }
-
-  .darkmode-toggle {
-    top: 1rem;
-    left: 1rem;
-  }
-
-  .darkmode-toggle .light-icon,
-  .darkmode-toggle .dark-icon {
-    font-size: 1.35rem;
-  }
 }
 
 #particles-js {
@@ -1061,18 +1051,10 @@ body.dark .darkmode-toggle .dark-icon {
   transform: scale(1);
 }
 
-@media (min-width: 701px) and (max-width: 950px) {
+@media (max-width: 950px) {
   .darkmode-toggle {
-    top: 1.2rem;
-    left: 1.25rem;
-  }
-}
-
-/* Media Query for Smaller Screens */
-@media (max-width: 600px) {
-  .darkmode-toggle {
-    top: 1vh;
-    left: 1vw;
+    top: 1rem;
+    left: 1rem;
   }
 
   .darkmode-toggle .light-icon,
