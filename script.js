@@ -118,4 +118,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const isOpen = menu.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", isOpen);
   });
+
+  document.querySelectorAll(".menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
 });

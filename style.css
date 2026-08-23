@@ -120,19 +120,6 @@ header h1 {
   color: var(--link-color);
 }
 
-/* Media Query for Smaller Screens */
-@media (max-width: 600px) {
-  .social-links a {
-    font-size: 1.5rem; /* Adjust the size for smaller screens */
-  }
-}
-
-@media (max-width: 400px) {
-  .social-links a {
-    font-size: 1.2rem; /* Further adjust the size for even smaller screens */
-  }
-}
-
 section {
   padding: 4vh 5vw;
 }
@@ -904,7 +891,7 @@ h2::after {
     width 0.3s,
     height 0.3s,
     opacity 0.3s;
-  z-index: 2000;
+  z-index: 2002;
 }
 
 .cursorinnerhover {
@@ -1076,5 +1063,208 @@ body.dark .darkmode-toggle .dark-icon {
   .cursor,
   .cursor2 {
     display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  #header-wrapper {
+    height: auto;
+    min-height: 0;
+    justify-content: flex-start;
+  }
+
+  header {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5rem 1.25rem 3rem;
+  }
+
+  .profile-pic {
+    width: clamp(7rem, 40vw, 8.5rem);
+    height: clamp(7rem, 40vw, 8.5rem);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  .description {
+    margin: 0.75rem auto 1.25rem;
+    max-width: 32ch;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  #about-me {
+    box-sizing: border-box;
+    width: calc(90% - 2rem);
+    max-width: 90%;
+    margin: 1rem auto 4rem;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+  }
+
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: min(100%, 300px);
+    height: auto;
+    min-height: 0;
+    padding: 0.6rem;
+    border-radius: 0.75rem;
+    box-sizing: border-box;
+  }
+
+  .card img,
+  .card-image img {
+    height: 130px;
+    border-radius: 0.5rem;
+  }
+
+  .card-content {
+    padding: 0.75rem 0.25rem 0.25rem;
+  }
+
+  .card-content b {
+    margin-top: 0.25rem;
+    font-size: 1.05rem;
+  }
+
+  .card-content p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .card-content p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .rune-games-highlight {
+    margin-top: 3rem;
+    padding-top: 2.25rem;
+  }
+
+  .rune-game-card {
+    width: min(100%, 320px);
+    min-height: 0;
+    justify-self: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .rune-game-card h3 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .rune-play-count {
+    font-size: 1.7rem;
+  }
+
+  .rune-game-stats {
+    margin-top: 1rem;
+  }
+
+  .blog-card {
+    width: min(100%, 320px);
+    border-radius: 0.75rem;
+  }
+
+  .blog-card img {
+    height: 170px;
+  }
+
+  .blog-card-content {
+    padding: 1rem;
+  }
+
+  .card,
+  .rune-game-card,
+  .blog-card {
+    margin-inline: auto;
+  }
+
+  .rune-game-card,
+  .blog-card {
+    width: min(320px, 100%);
+    margin: 0;
+  }
+
+  .rune-total-stats {
+    box-sizing: border-box;
+    width: min(320px, 100%);
+    margin: 1.5rem auto 2rem;
+  }
+
+  .rune-game-grid,
+  .blog-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+
+  .showcase-heading {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    margin-bottom: 0rem;
+  }
+
+  .social-links {
+    gap: 0.6rem;
+  }
+
+  .social-links a {
+    font-size: 1.8rem;
+  }
+
+  .scroll-down i {
+    font-size: 8vw;
+  }
+
+  footer {
+    padding: 0.5rem 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  footer a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-cta {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: center;
+  }
+
+  .cta-button {
+    justify-content: center;
+  }
+
+  .cta-note {
+    text-align: center;
+    margin: 0.25rem 0 0;
+  }
+
+  .scroll-down i {
+    font-size: 10vw;
   }
 }
