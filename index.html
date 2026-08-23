@@ -56,9 +56,6 @@
     />
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Dark mode toggle setup
-        const darkModeToggle = document.getElementById("darkmode-toggle");
-
         // Set initial mode
         if (!localStorage.getItem("theme")) {
           localStorage.setItem("theme", "dark");
@@ -97,7 +94,12 @@
           <i class="far fa-moon dark-icon"></i>
         </button>
 
-        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" type="button">
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-menu"
+          type="button"
+        >
           <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
 
@@ -119,8 +121,8 @@
         />
         <h1>Syed Muhammad Irtaza</h1>
         <p class="description">
-          I build open-source software, games, and hardware- from custom cameras and devboards
-          to web platforms.
+          I build open-source software, games, and hardware- from custom cameras
+          and devboards to web platforms.
         </p>
         <div class="hero-cta">
           <a href="#portfolio" class="cta-button">
@@ -181,9 +183,7 @@
         </div>
 
         <div class="scroll-down">
-          <a href="#about-me" target="_blank" rel="noopener noreferrer"
-            ><i class="fas fa-chevron-down"></i
-          ></a>
+          <a href="#about-me"><i class="fas fa-chevron-down"></i></a>
         </div>
       </header>
     </div>
@@ -205,10 +205,10 @@
           Islamabad, Pakistan. I love everything tech! When I am not coding or
           tinkering with electronics, I enjoy editing videos, and playing table
           tennis. I also love nature, and books, and books in nature! And
-          Pokémon. 
-          </br>
-          I'm always happy to talk about computers and programming.
-          Welcome to my portfolio!
+          Pokémon.
+          <br />
+          I'm always happy to talk about computers and programming. Welcome to
+          my portfolio!
         </p>
         <h3>Some things I have done</h3>
         <ul>
@@ -232,9 +232,9 @@
               href="https://hackclub.slack.com/archives/C01D7AHKMPF/p1768063492916589"
               >Borked</a
             >
-            (<a href="https://borked.irtaza.xyz">site</a>), a
-            <s>game</s> Web Jam for 6.7k teens! High Schoolers had to
-            build a website with the worst UI possible!
+            (<a href="https://borked.irtaza.xyz">site</a>), a <s>game</s> Web
+            Jam for 6.7k teens! High Schoolers had to build a website with the
+            worst UI possible!
           </li>
         </ul>
         <h3>Skills, Methodologies, and Tools</h3>

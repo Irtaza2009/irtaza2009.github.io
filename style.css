@@ -354,10 +354,6 @@ h2::after {
   text-align: right;
 }
 
-#articles .card {
-  justify-self: center;
-}
-
 .additional-articles {
   width: min(620px, 100%);
   margin: 2rem auto 0;
@@ -912,7 +908,7 @@ h2::after {
   }
 
   h2 {
-    font-size: 5vw;
+    font-size: 6vw;
   }
 
   .profile-pic {
@@ -935,10 +931,6 @@ h2::after {
 
 .scroll-down i:hover {
   color: var(--link-color);
-}
-
-section {
-  padding: 4vh 5vw;
 }
 
 /* Bounce animation for the chevron */
@@ -1142,11 +1134,6 @@ body.dark .darkmode-toggle .dark-icon {
   .card-content b {
     margin-top: 0.25rem;
     font-size: 1.05rem;
-  }
-
-  .card-content p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
   }
 
   .card-content p {
