@@ -186,6 +186,22 @@ h2::after {
   margin-bottom: 0.05rem;
 }
 
+.coding-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.2rem 0 0;
+  padding: 0.2rem 0.7rem;
+  border-left: 2px solid var(--link-color);
+  color: #8b8b8b;
+  font-size: 0.85rem;
+}
+
+.coding-time i,
+.coding-time strong {
+  color: var(--link-color);
+}
+
 .card-image {
   position: relative;
   width: 100%;

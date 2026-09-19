@@ -1,6 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
   const darkModeToggle = document.getElementById("darkmode-toggle");
 
+  const loadTotalCodingTime = async () => {
+    const codingTimeElement = document.getElementById("total-coding-time");
+
+    if (!codingTimeElement) {
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://hackatime.hackclub.com/api/summary?user_id=Irtaza&interval=all_time",
+        { cache: "no-store" },
+      );
+
+      if (!response.ok) {
+        throw new Error(`Hackatime returned ${response.status}`);
+      }
+
+      const data = await response.json();
+      const totalSeconds = (data.languages ?? []).reduce(
+        (sum, language) => sum + language.total,
+        0,
+      );
+      const totalHours = Math.floor(totalSeconds / 3600);
+
+      codingTimeElement.innerHTML = `<strong>${totalHours.toLocaleString()}h</strong> coded in total`;
+    } catch {
+      codingTimeElement.hidden = true;
+    }
+  };
+
   const initializeParticles = () => {
     const isDarkMode = document.body.classList.contains("dark");
     const lineColor = isDarkMode ? "#ffffff" : "#434853";
@@ -29,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize particles on page load
   initializeParticles();
+  loadTotalCodingTime();
 
   // Toggle dark/light mode
   darkModeToggle.addEventListener("click", () => {
